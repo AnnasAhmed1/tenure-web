@@ -1,23 +1,24 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+// import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+import App from './App';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <div>Hello world!</div>,
-    children: [
-      {
-        path: 'team',
-        element: <div>Hello team!</div>,
-      },
-    ],
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <div>Hello world!</div>,
+//     children: [
+//       {
+//         path: "team",
+//         element: <div>Hello team!</div>,
+//       },
+//     ],
+//   },
+// ]
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App/>
   </React.StrictMode>,
 );
 // ReactDOM.createRoot(document.getElementById('root')!).render(
