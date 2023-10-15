@@ -15,24 +15,5 @@ import Step4_dc from './pages/OnBoarding/Step4_dc.tsx';
 import Layout from './components/Layout/Layout.tsx';
 
 export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/ForgetPassword" element={<Forgetpassword />} />
-        <Route path="/EmailSent" element={<Email_sent />} />
-        <Route path="/ResetPassword" element={<ResetPassword />} />
-        <Route path="/RasswordResetSuccess" element={<Sucess />} />
-        <Route path="/OnBoarding1" element={<Step1 />} />
-        <Route path="/OnBoarding2" element={<Step2 />} />
-        <Route path="/OnBoarding3" element={<Step3 />} />
-        <Route path="/OnBoarding4" element={<Step4_dc />} />
-        <Route path="/" element={<Login />} />
-        <Route 
-          path="/*"
-          element={<Layout />}
-        />
-      </Routes>
-    </Router>
-  );
+  return <Login />;
 }
