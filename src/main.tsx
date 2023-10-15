@@ -1,31 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
-
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Home } from "./pages/Home.tsx";
-import { Contact } from "./pages/Contact.tsx";
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
-    path: "/vite-react-router/",
-    element: <App />,
-    children: [
-      {
-        path: "/vite-react-router/",
-        element: <Home />,
-      },
-      {
-        path: "/vite-react-router/contact",
-        element: <Contact />,
-      },
-    ],
+    path: '/',
+    element: (
+      <div>
+        <h1>Hello World</h1>
+        <Link to="about">About Us</Link>
+      </div>
+    ),
+  },
+  {
+    path: 'about',
+    element: <div>About</div>,
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+createRoot(document.getElementById('root')!).render(<RouterProvider router={router} />);
