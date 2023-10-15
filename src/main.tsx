@@ -7,13 +7,14 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <div>Hello world!</div>,
-  },
-  {
-    path: '/vite-react-router/contact',
-    element: <div>Hello contact!</div>,
+    children: [
+      {
+        path: 'team',
+        element: <div>Hello team!</div>,
+      },
+    ],
   },
 ]);
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
