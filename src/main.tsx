@@ -1,20 +1,31 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom/client';
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
 
-// ]
-ReactDOM.createRoot(document.getElementById('root')!).render(
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Home } from "./pages/Home.tsx";
+import { Contact } from "./pages/Contact.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/vite-react-router/",
+    element: <App />,
+    children: [
+      {
+        path: "/vite-react-router/",
+        element: <Home />,
+      },
+      {
+        path: "/vite-react-router/contact",
+        element: <Contact />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter> {/* Wrap your entire app with BrowserRouter */}
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
-// ReactDOM.createRoot(document.getElementById('root')!).render(
-//   <React.StrictMode>
-//     <RouterProvider router={router} />
-//   </React.StrictMode>,
-// );
