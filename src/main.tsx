@@ -3,22 +3,14 @@ import * as ReactDOM from 'react-dom/client';
 // import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <div>Hello world!</div>,
-//     children: [
-//       {
-//         path: "team",
-//         element: <div>Hello team!</div>,
-//       },
-//     ],
-//   },
 // ]
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App/>
+    <BrowserRouter> {/* Wrap your entire app with BrowserRouter */}
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
 );
 // ReactDOM.createRoot(document.getElementById('root')!).render(
