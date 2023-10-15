@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     element: <div>Hello world!</div>,
   },
   {
-    path: 'contacts',
+    path: '/vite-react-router/contact',
     element: <div>Hello contact!</div>,
   },
 ]);
